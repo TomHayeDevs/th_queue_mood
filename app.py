@@ -1,14 +1,16 @@
-import os
+# import os
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 from datetime import datetime
-from dotenv import load_dotenv
 from streamlit_autorefresh import st_autorefresh
 
 from storage import append_row, get_counts_between, get_latest_notes
 
-load_dotenv()
+# from dotenv import load_dotenv
+
+# load_dotenv()
+
 # ---------------------------------------------------
 # --- MAIN APP --------------------------------------
 # ---------------------------------------------------
@@ -19,7 +21,7 @@ st.set_page_config(
     layout="centered",
 )
 
-st_autorefresh(interval=5000, key="auto_refresh")
+st_autorefresh(interval=15000, key="auto_refresh")
 
 st.markdown(
     """
@@ -43,7 +45,7 @@ if st.button("Submit"):
     if success:
         st.success("Logged successfully!")
     else:
-        st.error("Failed to log – check credentials or Sheet permissions.")
+        st.error("Failed to log - check credentials or Sheet permissions.")
 
 st.write("---")
 
