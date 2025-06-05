@@ -29,9 +29,16 @@ mood-of-queue/
 
 ## Google Sheets Setup
 
-- For now, the app uses 
+- For now, the app uses this public google sheet: https://docs.google.com/spreadsheets/d/1ofGH4pAq6IMjRmUp-3BQxZ2F8WzmJoo3LN__TWyfDto/edit?usp=sharing -> I've enabled it with editor permissions, in case you want to test manual changes in the file itself.
 - Create a Google Sheet with columns: `timestamp`, `mood`, `note`.
 - Share it with your service account email (from your Google Cloud credentials).
+
+## Further Notes
+
+- This project was rather nice!
+- I found myself split, 20% coding - 80% setting up the repo and convincing Streamlit to behave.
+- In my helper file storage.py -> got a quick Copilot fix to declare a function to support a tooltip msg.
+- Emojis are actually numeric values below the hood -> I am assuming this can be a placeholder for a more stable solution (perhaps a text-mining classifier that reads tickets, infer mood value, and sends back to this logger?)
 
 ---
 
