@@ -21,7 +21,7 @@ if not SHEET_ID:
 
 # --- AUTHORIZATION ---------------------------------------------------
 def _authorize():
-    raw = secrets["SERVICE_ACCOUNT_JSON"]
+    raw = secrets["SERVICE_ACCOUNT_JSON"].strip()
     if not raw:
         raise RuntimeError("SERVICE_ACCOUNT_JSON not set.")
     cred_dict = json.loads(raw)

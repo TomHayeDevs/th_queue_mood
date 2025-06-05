@@ -7,10 +7,6 @@ from streamlit_autorefresh import st_autorefresh
 
 from storage import append_row, get_counts_between, get_latest_notes
 
-raw = st.secrets["SERVICE_ACCOUNT_JSON"]
-st.write("⟨RAW SECRET⟩", repr(raw))
-st.stop()
-
 # from dotenv import load_dotenv
 
 # load_dotenv()
