@@ -9,10 +9,6 @@ from streamlit_autorefresh import st_autorefresh
 from storage import append_row, get_counts_between, get_latest_notes
 
 load_dotenv()
-
-st_autorefresh(interval=5000, key="auto_refresh")
-
-
 # ---------------------------------------------------
 # --- MAIN APP --------------------------------------
 # ---------------------------------------------------
@@ -22,6 +18,8 @@ st.set_page_config(
     page_icon="😊",
     layout="centered",
 )
+
+st_autorefresh(interval=5000, key="auto_refresh")
 
 st.markdown(
     """
