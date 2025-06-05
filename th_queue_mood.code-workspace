@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../mood_logger"
+		}
+	],
+	"settings": {}
+}
