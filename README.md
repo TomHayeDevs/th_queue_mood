@@ -1,4 +1,4 @@
-# th_queue_mood
+# Mood of the Queue App
 
 > Simple, straightforward app to log tickets' moods and show them in a bar chart
 
