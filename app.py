@@ -1,4 +1,4 @@
-# import os
+import os
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -6,10 +6,6 @@ from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 
 from storage import append_row, get_counts_between, get_latest_notes
-
-# from dotenv import load_dotenv
-
-# load_dotenv()
 
 # ---------------------------------------------------
 # --- MAIN APP --------------------------------------

@@ -4,16 +4,14 @@ import os, json
 
 from gspread.auth import service_account_from_dict
 from gspread.utils import ValueInputOption
-import streamlit as st
-from streamlit import secrets
 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 SCOPE = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file"]
-# SHEET_ID = os.getenv("GOOGLE_SHEET_ID", "").strip()
-SHEET_ID = secrets["GOOGLE_SHEET_ID"]
+SHEET_ID = os.getenv("GOOGLE_SHEET_ID", "").strip()
+
 
 if not SHEET_ID:
     raise RuntimeError("Please set the GOOGLE_SHEET_ID environment variable.")
@@ -21,7 +19,7 @@ if not SHEET_ID:
 
 # --- AUTHORIZATION ---------------------------------------------------
 def _authorize():
-    raw = secrets["SERVICE_ACCOUNT_JSON"].strip()
+    raw = os.getenv("SERVICE_ACCOUNT_JSON", "").strip()
     if not raw:
         raise RuntimeError("SERVICE_ACCOUNT_JSON not set.")
     cred_dict = json.loads(raw)
@@ -30,7 +28,7 @@ def _authorize():
 def _get_sheet():
     client = _authorize()
     workbook = client.open_by_key(SHEET_ID)
-    sheet_name = secrets.get("GOOGLE_SHEET_NAME", "")
+    sheet_name = os.getenv("GOOGLE_SHEET_NAME", "").strip()
     return workbook.worksheet(sheet_name) if sheet_name else workbook.sheet1
 
 
